@@ -1,0 +1,39 @@
+@import "./variables";
+
+
+.mr10 {
+  margin-right: 10px;
+}
+
+.example {
+  background-color: $bgColor;
+  padding: 5px 10px;
+}
+.ml10 {
+  margin-left: 10px;
+}
+
+.ml12 {
+  margin-left: 12px;
+}
+
+.mr12 {
+  margin-right: 12px;
+}
+
+.drawer-action-box {
+  width: 98%;
+  border-top: 1px solid $borderColor;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.action-btn {
+  color: $mainColor;
+  font-size: 12px;
+  cursor: pointer;
+  &:hover {
+    color: #5f80f6;
+  }
+}
