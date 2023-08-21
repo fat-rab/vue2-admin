@@ -1,29 +1,43 @@
 <template>
-  <el-card class="my-card" shadow="never">
-    <div slot="header">
-      <span>首页</span>
-    </div>
-    <el-button type="text">文字按钮</el-button>
-    <el-button type="text">文字按钮</el-button>
-  </el-card>
+  <div>
+    <el-form ref="formRef" :model="form" :rules="rules">
+      <el-form-item label="radio" prop="radio">
+        <el-radio-group v-model="form.radio">
+          <el-radio label="线上品牌商赞助" />
+          <el-radio label="线下场地免费" />
+        </el-radio-group>
+      </el-form-item>
+    </el-form>
+    <button @click="test">test</button>
+  </div>
+
 </template>
 
 <script>
-// import { mapGetters } from 'vuex'
-// import guide from '@/utils/guide'
+
 export default {
   data () {
-    return {}
+    return {
+      form: {
+        radio: ''
+      },
+      rules: {
+        radio: [{ required: true, trigger: 'blur', message: '请选择radio' }]
+      }
+    }
   },
-  // computed: {
-  //   ...mapGetters([
-  //     'firstLogin'
-  //   ])
-  // },
+
   mounted () {
-    // if (this.firstLogin) {
-    //   guide()
-    // }
+    // const ele = document.getElementById('video1')
+    // console.log(ele, 'ele')
+    // navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
+    //   ele.srcObject = stream
+    // })
+  },
+  methods: {
+    test () {
+      this.$refs.formRef.validate()
+    }
   }
 }
 </script>
